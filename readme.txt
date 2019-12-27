@@ -3,6 +3,7 @@ Jobs_Analyse 开发日志
 
 ----------------------------------------------------------
 
+开始时间
 2019/12/26
 
 ----------------------------------------------------------
@@ -24,7 +25,13 @@ Jobs_Analyse 开发日志
 ----------------------------------------------------------
 
 编码(进度):
-	1.创建Git版本管理，创建基本环境
+	2019/12/26
+	 1.创建Git版本管理，创建基本环境 .jobenv
+	   创建master、develop、jobs_spider分支
+	 2.jobs_spider分支的编写
+
+	2019/12/27
+	 1.jobs_spider分支的编写
 
 ----------------------------------------------------------
 
@@ -40,15 +47,63 @@ Jobs_Analyse 开发日志
 项目起始记录
 ----------------------------------------------------------
 
-2019/12/26
+2019/12/26 详细记录
 
 ----------------------------------------------------------
 
 Git项目版本管理
 
-GitHub
-  新建仓库
-  
+1. 创建虚拟环境
+	virtualenv .webenv
+	pip install django==1.11.18 mysqlclient redis
+
+2. 创建django项目
+	django-admin startproject 
+
+3. git上创建仓库，项目进行git init
+	git bash here
+	git init
+
+	vi .gitignore
+	.git/
+	.idea/
+	.gitignore
+
+	git add .
+	git commit -m '创建了项目'
+	git remote add origin git@github.com:SetsumiDream/Jobs_Analyse.git
+	git push -u origin master
+
+	git checkout -b develop  # 创建分支
+	git push -u origin develop  # 上传分支
+
+	# 设置权限
+	Branches 
+	add rule
+
+	git checkout -b jobs_spider
+	git push -u origin jobs_spider
+
+	修改默认上传
+	jobs_spider
+
+jobs_spider分支的编写
+
+scrapy在windows上安装有时会报错
+解决办法:
+  1.pip install pywin32
+  2.https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
+    下载对应版本Twisted
+    pip install 路径文件
+
+1. 安装 pip install scrapy
+
+----------------------------------------------------------
+
+2019/12/27 详细记录
+
+----------------------------------------------------------
+
 
 
 ----------------------------------------------------------
