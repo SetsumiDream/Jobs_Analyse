@@ -1,0 +1,89 @@
+
+Jobs_Analyse 开发学习日志
+
+----------------------------------------------------------
+
+2019/12/27
+
+----------------------------------------------------------
+
+爬虫框架scrapy学习过程记录
+
+scrapy项目创建
+ 1. scrapy startproject 项目名
+ 
+ settings里robots.txt 设置了允许爬取地址
+
+ ROBOTSTXT_OBEY = False 要设置为False，很多网站没有robots
+
+ DEFAULT_REQUEST_HEADERS 里设置 浏览器 头信息
+ Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36
+
+ 创建子项目 scrapy genspider 爬虫名 '爬取网站根目录'
+
+ 执行爬虫 scrapy crawl 爬虫名
+   根目录创建一个start.py 
+     from scrapy import cmdline
+     cmdline.execute('scrapy crawl 爬虫名'.split())
+ 
+ 对象方法xpath, get获取内容
+
+ 获取对象的列表，遍历内容，整合数据为字典 yield
+
+
+ item中定义保存的数据格式
+ 把Item导入
+ 使用JsonLinesItemExporter
+ 
+ 规则爬虫创建
+ scrapy genspider -t crawl test_regular '网站'
+
+ 列表页和详情页规则设置
+rules = (
+    Rule(LinkExtractor(allow=r''), follow=True),
+    Rule(LinkExtractor(allow=r''), callback='parse_detail', follow=False),
+)
+
+post请求 FormRequest
+def parse(self, response):
+    url = 'https://fanyi.baidu.com/sug'
+    formdata = {
+        'kw': 'job'
+    }
+    yield scrapy.FormRequest(url=url, formdata=formdata, callback=self.get_json_data)
+
+def get_json_data(self, response):
+    con = json.loads(response.text)
+    print(con)
+
+如果第一次就是post请求
+重写start_requests方法
+
+
+写入数据库
+import pymysql
+
+class JianshuPipeline(object):
+    def __init__(self):
+
+        self.db = pymysql.connect(host='127.0.0.1', user='root', password="12345678",
+                 database='test', port=3306)
+
+        self.cursor = self.db.cursor()
+
+    def process_item(self, item, spider):
+
+        title = item.get('title')
+        wordnum = item.get('wordnum')
+        read = item.get('read')
+
+        sql = "insert into message (`title`, `wordnum`, `read`) values ('%s', '%s', '%s')" % (title, wordnum, read)
+
+        self.cursor.execute(sql)
+
+        self.db.commit()
+
+        return item
+
+    def close_spider(self, spider):
+        self.db.close()

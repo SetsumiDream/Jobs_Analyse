@@ -3,6 +3,7 @@ Jobs_Analyse 开发日志
 
 ----------------------------------------------------------
 
+开始时间
 2019/12/26
 
 ----------------------------------------------------------
@@ -24,7 +25,13 @@ Jobs_Analyse 开发日志
 ----------------------------------------------------------
 
 编码(进度):
-	1.创建Git版本管理，创建基本环境
+	2019/12/26
+	 1.创建Git版本管理，创建基本环境 .jobenv
+	   创建master、develop、jobs_spider分支
+	 2.jobs_spider分支的编写
+
+	2019/12/27
+	 1.jobs_spider分支的编写
 
 ----------------------------------------------------------
 
@@ -40,15 +47,116 @@ Jobs_Analyse 开发日志
 项目起始记录
 ----------------------------------------------------------
 
-2019/12/26
+2019/12/26 详细记录
 
 ----------------------------------------------------------
 
 Git项目版本管理
 
-GitHub
-  新建仓库
-  
+1. 创建虚拟环境
+	virtualenv .webenv
+	pip install django==1.11.18 mysqlclient redis
+
+2. 创建django项目
+	django-admin startproject 
+
+3. git上创建仓库，项目进行git init
+	git bash here
+	git init
+
+	vi .gitignore
+	.git/
+	.idea/
+	.gitignore
+
+	git add .
+	git commit -m '创建了项目'
+	git remote add origin git@github.com:SetsumiDream/Jobs_Analyse.git
+	git push -u origin master
+
+	git checkout -b develop  # 创建分支
+	git push -u origin develop  # 上传分支
+
+	# 设置权限
+	Branches 
+	add rule
+
+	git checkout -b jobs_spider
+	git push -u origin jobs_spider
+
+	修改默认上传
+	jobs_spider
+
+jobs_spider分支的编写
+
+scrapy在windows上安装有时会报错
+解决办法:
+  1.pip install pywin32
+  2.https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
+    下载对应版本Twisted
+    pip install 路径文件
+
+1. 安装 pip install scrapy
+
+----------------------------------------------------------
+
+2019/12/27 详细记录
+
+----------------------------------------------------------
+
+今天进行了scrapy框架的学习
+主要进行了xpath、规则爬虫、selenium、下载中间件、写入数据库
+明天周六，班级组织聚会
+
+下一步计划 开始着手网站的爬取，并存入数据库，再导出成DF文件
+第二步计划 django项目 写爬虫前端
+第三步计划 爬取数据的显示
+第四步计划 机器学习处理数据
+
+----------------------------------------------------------
+
+2019/12/29 详细记录
+
+----------------------------------------------------------
+
+今天规划了下要爬取的字段
+
+1.岗位名称 workname
+2.公司名称 company
+3.公司类型 cptype
+4.公司行业 business
+5.工作地点 place
+6.工作经验 exp
+7.教育水平 edu
+8.需要人数 needNum
+9.发布时间 time
+10.岗位详细 work_msg
+11.工资 salary
+
+安装pandas 方便存储
+pip install pandas
+
+----------------------------------------------------------
+
+2019/12/30 详细记录
+
+----------------------------------------------------------
+
+今天开始整理爬虫
+创建第一个爬虫项目
+
+----------------------------------------------------------
+
+2020/01/02 详细记录
+
+----------------------------------------------------------
+
+https://blog.csdn.net/weixin_39726347/article/details/88061687
+
+BOSS直聘反爬 破解 使用中间件拦截，注入JS代码
+pip install mitmproxy==4.0.1
+
+
 
 
 ----------------------------------------------------------
