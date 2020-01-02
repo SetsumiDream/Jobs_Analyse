@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for wxapp project
+# Scrapy settings for spider_Bossjob project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,16 +8,15 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-import os
 
-BOT_NAME = 'wxapp'
+BOT_NAME = 'spider_Bossjob'
 
-SPIDER_MODULES = ['wxapp.spiders']
-NEWSPIDER_MODULE = 'wxapp.spiders'
+SPIDER_MODULES = ['spider_Bossjob.spiders']
+NEWSPIDER_MODULE = 'spider_Bossjob.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'wxapp (+http://www.yourdomain.com)'
+#USER_AGENT = 'spider_Bossjob (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -34,7 +33,7 @@ ROBOTSTXT_OBEY = False
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -50,16 +49,14 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'wxapp.middlewares.WxappSpiderMiddleware': 543,
+#    'spider_Bossjob.middlewares.SpiderBossjobSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'useragent.middlewares.MyUserAgentDownloadMiddleware': 543,
-    # 'useragent.middlewares.IpAgentDownloadMiddleware': 1,
-   # 'wxapp.middlewares.SeleniumDownloadMiddleware': 543,
-   'wxapp.middlewares.WxappDownloaderMiddleware': 543,
+   # 'spider_Bossjob.middlewares.SpiderBossjobDownloaderMiddleware': 544,
+   'spider_Bossjob.middlewares.SeleniumDownloadMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -71,8 +68,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'wxapp.pipelines.WxappPipeline': 300,
-    # 'scrapy.pipelines.images.ImagesPipeline': 1
+   'spider_Bossjob.pipelines.SpiderBossjobPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -95,5 +91,3 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-IMAGES_STORE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'images')

@@ -2,11 +2,12 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-from wxapp.items import WxappItem
+
+from spider_51job.items import Spider51JobItem
 
 
-class TestRegularSpider(CrawlSpider):
-    name = 'test_regular'
+class Spider51jobRegularSpider(CrawlSpider):
+    name = 'spider_51job_regular'
     allowed_domains = ['51job.com']
     start_urls = ['https://search.51job.com/list/000000,000000,0000,00,9,99,python,2,1.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=']
 
@@ -17,7 +18,6 @@ class TestRegularSpider(CrawlSpider):
     )
 
     def parse_detail(self, response):
-
         workname = response.xpath('//div[@class="in"]//h1/@title').get()
         salary = response.xpath('//div[@class="in"]//div[@class="cn"]//strong/text()').get()
         company = response.xpath('//div[@class="in"]//p[@class="cname"]/a[1]/@title').get()
@@ -29,9 +29,6 @@ class TestRegularSpider(CrawlSpider):
         place, exp, edu, needNum, time = msg[0], msg[1], msg[2], msg[3], msg[4]
         msg1 = response.xpath('//div[@class="tBorderTop_box"][1]//p/text()').getall()
         work_msg = ''.join(''.join(msg1).split())
-
-        item = WxappItem(workname=workname, salary=salary, company=company, cptype=cptype, business=business, place=place, exp=exp, edu=edu, needNum=needNum, time=time, work_msg=work_msg)
-        yield item
         # print(workname, company, cptype, business, place, exp, edu, needNum, time, work_msg)
-
-
+        item = Spider51JobItem(workname=workname, salary=salary, company=company, cptype=cptype, business=business, place=place, exp=exp, edu=edu, needNum=needNum, time=time, work_msg=work_msg)
+        yield item

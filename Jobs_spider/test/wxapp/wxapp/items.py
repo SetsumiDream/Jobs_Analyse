@@ -11,11 +11,23 @@ import scrapy
 class WxappItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    name = scrapy.Field()
-    work = scrapy.Field()
-    place = scrapy.Field()
+    # name = scrapy.Field()
+    # work = scrapy.Field()
+    # place = scrapy.Field()
+    # salary = scrapy.Field()
+    # time = scrapy.Field()
+
+    workname = scrapy.Field()
     salary = scrapy.Field()
+    company = scrapy.Field()
+    cptype = scrapy.Field()
+    business = scrapy.Field()
+    place = scrapy.Field()
+    exp = scrapy.Field()
+    edu = scrapy.Field()
+    needNum = scrapy.Field()
     time = scrapy.Field()
+    work_msg = scrapy.Field()
 
 
     # 如果要下载图片要定义这个字段，然后setting里注册ImagesPipeline

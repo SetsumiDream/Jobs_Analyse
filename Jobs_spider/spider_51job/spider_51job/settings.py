@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for wxapp project
+# Scrapy settings for spider_51job project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,16 +8,15 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-import os
 
-BOT_NAME = 'wxapp'
+BOT_NAME = 'spider_51job'
 
-SPIDER_MODULES = ['wxapp.spiders']
-NEWSPIDER_MODULE = 'wxapp.spiders'
+SPIDER_MODULES = ['spider_51job.spiders']
+NEWSPIDER_MODULE = 'spider_51job.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'wxapp (+http://www.yourdomain.com)'
+#USER_AGENT = 'spider_51job (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -50,16 +49,13 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'wxapp.middlewares.WxappSpiderMiddleware': 543,
+#    'spider_51job.middlewares.Spider51JobSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # 'useragent.middlewares.MyUserAgentDownloadMiddleware': 543,
-    # 'useragent.middlewares.IpAgentDownloadMiddleware': 1,
-   # 'wxapp.middlewares.SeleniumDownloadMiddleware': 543,
-   'wxapp.middlewares.WxappDownloaderMiddleware': 543,
+   'spider_51job.middlewares.Spider51JobDownloaderMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -71,8 +67,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'wxapp.pipelines.WxappPipeline': 300,
-    # 'scrapy.pipelines.images.ImagesPipeline': 1
+   'spider_51job.pipelines.Spider51JobPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -95,5 +90,3 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-IMAGES_STORE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'images')

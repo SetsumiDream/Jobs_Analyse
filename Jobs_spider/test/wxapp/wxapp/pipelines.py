@@ -5,7 +5,10 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 import json
+import os
 
+from pandas import DataFrame, Series
+import pandas as pd
 
 # class WxappPipeline(object):
 #
@@ -57,6 +60,15 @@ class WxappPipeline(object):
     def process_item(self, item, spider):
         # self.fp.write(json.dumps(dict(item), ensure_ascii=False)+'\n')
         self.exporter.export_item(item)
+        # print('查看item是不是字典', item)
+        s = Series(eval(item.__str__()))
+        # print(s)
+        df = DataFrame()
+        df = df.append(s, ignore_index=True)
+        if not os.path.exists('test.csv'):
+            df.to_csv('test.csv', mode='a', header=1)
+        else:
+            df.to_csv('test.csv', mode='a', header=0)
         return item
 
     def close_spider(self, spider):
