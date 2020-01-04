@@ -33,6 +33,12 @@ Jobs_Analyse 开发日志
 	2019/12/27
 	 1.jobs_spider分支的编写
 
+	2020/01/02
+	 1.完成51job、boss直聘、拉钩爬取
+
+	2020/01/04
+	 1.完成登录页面
+
 ----------------------------------------------------------
 
 测试报告:
@@ -156,10 +162,123 @@ https://blog.csdn.net/weixin_39726347/article/details/88061687
 BOSS直聘反爬 破解 使用中间件拦截，注入JS代码
 pip install mitmproxy==4.0.1
 
+完成51job、BOSS直聘、拉钩网爬虫功能
 
+git add.
+git commit -m ""
+git push
 
+git上合并版本 New pull request
+git checkout develop  切回develp
+git pull              拉回版本
+git  checkout -b jobs_web    切换分支
+git push -u origin jobs_web  上传分支
+
+明日计划编写 django项目
+因为时间不多，所以爬虫数据使用51job爬取的数据
 
 ----------------------------------------------------------
+
+2020/01/03 详细记录
+
+----------------------------------------------------------
+
+今天开始写django项目
+pip install django==1.11.18 mysqlclient redis
+django-admin startproject Jobs_web_django
+
+首先我们要配置一下项目
+	在项目下，创建templates和static文件夹，用来放置模板和静态文件
+	在settings里设置templates和static的路径 
+	'DIRS':[os.path.join(BASE_DIR, 'templates')]
+	STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+	顺便把mysql数据库配置也修改了
+	DATABASES = {
+	    'default': {
+	        'ENGINE': 'django.db.backends.mysql',
+	        'NAME': 'axf_test',
+	        'HOST': '127.0.0.1',
+	        'POST': 3306,
+	        'USER': '用户名',
+	        'PASSWORD': '密码',
+	    }
+	}
+	再顺便用cmd 进入mysql创建我们的数据库
+	mysql -u root -p
+	密码
+	create database axf_test charset=utf8;
+
+我们的视图模块
+创建子应用job_view
+	python manage.py startapp job_view
+
+	在主应用settings中 INSTALLED_APPS 注册子应用 'job_view',
+	主应用路由中，添加url(r'^', include('job_view.urls', namespace='job_view')),
+
+	子应用中
+	urls.py 中配置路由
+	from django.conf.urls import url
+	from . import views
+	urlpatterns = [
+	    url(r'^login/$', views.login, name='login')
+	]
+
+	views.py 中配置视图函数
+	from django.shortcuts import render
+	def index(request):
+	    return render(request, 'login.html')
+
+这个是参考的登录模板
+https://blog.csdn.net/weixin_44196651/article/details/89737022
+
+写了一个打字机效果，参考
+https://www.cnblogs.com/wangtaobiu/
+
+
+开始写用户接口模块
+startapp user
+注册user
+然后开始写模型
+连接mysql
+?serverTimezone=UTC
+
+把views改为api
+开始写接口
+因为发送短信是常用功能，写成lib包
+发送短信第三方接口写到应用的config里面方便修改
+这个短信接口需要post请求，安装requests
+验证码信息先放在django.core.cache里
+键放在common的keys里
+错误码放在common的errors里
+在lib里写响应格式http.py
+def render_json(code=0, data=None):
+    dic = {
+        'code': code,
+        'data': data
+    }
+    if settings.DEBUG:
+        dic_dumps = json.dumps(dic, ensure_ascii=False, indent=4, sort_keys=True)
+    else:
+        dic_dumps = json.dumps(dic, ensure_ascii=False, separators=[',', ':'])
+    return HttpResponse(dic_dumps)
+
+流程
+前端
+js通过ajax发送post请求
+后端
+获取post的手机号，生成验证码，通过第三方接口发送短信，返回成功响应并把验证码和手机号以键值对的形式保存到redis
+获取post的手机号和验证码，与redis的验证码对比，返回响应
+
+登录功能完成
+
+----------------------------------------------------------
+
+2020/01/04 详细记录
+
+----------------------------------------------------------
+
+
 ----------------------------------------------------------
 ----------------------------------------------------------
 ----------------------------------------------------------
