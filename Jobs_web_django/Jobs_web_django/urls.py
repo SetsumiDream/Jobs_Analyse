@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 import user.api as user_api
+import job_analyse.api as job_analyse_api
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
@@ -27,5 +28,6 @@ urlpatterns = [
     url(r'^api/user/submit/phone/$', user_api.submit_phone),  # 发送短信
     url(r'^api/user/submit/vcode/$', user_api.submit_vcode),  # 发送短信
 
-
+    # api  analyse
+    url(r'^api/job/analyse/test/$', job_analyse_api.test),  # 画图测试
 ]

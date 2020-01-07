@@ -3,14 +3,18 @@ import random
 import requests
 from django.core.cache import cache
 
+from worker import call_by_worker
 from Jobs_web_django import config
 from common import keys
+
 
 def gen_vcode(size=4):
     start = 10 ** (size - 1)
     end = 10 ** size - 1
     return str(random.randint(start, end))
 
+
+@call_by_worker
 def send_sms(phone):
     params = config.YZX_PARAMS.copy()
     params['mobile'] = phone

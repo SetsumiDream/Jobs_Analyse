@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34ab3f4a-131b-4466-9f02-823681443911" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Jobs_web_django/job_view/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Jobs_web_django/user/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Jobs_web_django/user/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Jobs_web_django/job_analyse/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spider_51job/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spider_51job/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/Jobs_web_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/Jobs_web_django/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/Jobs_web_django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/Jobs_web_django/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/job_view/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/job_view/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/job_view/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/job_view/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/static/css/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jobs_web_django/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jobs_web_django/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../readme.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider_Bossjob/spiders/spider_Bossjob_regular.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="304">
+              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -30,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
+            <state relative-caret-position="540">
               <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
             </state>
           </provider>
@@ -54,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/spider_Bossjob/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
-              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
                 <element signature="e#194#203#0" expanded="true" />
               </folding>
@@ -62,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spider_Bossjob/middlewares.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+            <state relative-caret-position="3402">
+              <caret line="126" column="61" lean-forward="true" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="61" />
               <folding>
                 <element signature="e#170#196#0" expanded="true" />
               </folding>
@@ -109,7 +117,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="684" />
+    <option name="x" value="1043" />
+    <option name="y" value="74" />
     <option name="width" value="1205" />
     <option name="height" value="1007" />
   </component>
@@ -217,17 +226,18 @@
       <workItem from="1577956362744" duration="9962000" />
       <workItem from="1577971258124" duration="55000" />
       <workItem from="1578055562116" duration="32000" />
+      <workItem from="1578366559968" duration="695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30372000" />
+    <option name="totallyTimeSpent" value="31067000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="684" y="0" width="1205" height="1007" extended-state="0" />
+    <frame x="1043" y="74" width="1205" height="1007" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27533633" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28340808" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -275,9 +285,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json" />
+    <entry file="file://$PROJECT_DIR$/spider_Bossjob/spiders/spider_Bossjob_regular.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
+        <state relative-caret-position="540">
           <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
         </state>
       </provider>
@@ -292,10 +312,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spider_Bossjob/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider_Bossjob/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
-          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
             <element signature="e#194#203#0" expanded="true" />
           </folding>
@@ -304,27 +331,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spider_Bossjob/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+        <state relative-caret-position="3402">
+          <caret line="126" column="61" lean-forward="true" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="61" />
           <folding>
             <element signature="e#170#196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spider_Bossjob/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spider_Bossjob/spiders/spider_Bossjob_regular.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>

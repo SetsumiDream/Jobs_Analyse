@@ -8,3 +8,7 @@ def login(request):
 
 def main(request):
     return render(request, 'main.html')
+
+
+def jobs_analyse(request):
+    return render(request, 'jobs_analyse.html')

@@ -16,6 +16,7 @@ Jobs_Analyse 开发日志
 	   需求: 数据分析，机器学习
 	3. web页面显示数据情况
 	   需求: 页面输入信息爬取，生成分析
+	4. 制作增删改查页面，写接口文档
 
 ----------------------------------------------------------
 
@@ -275,6 +276,32 @@ js通过ajax发送post请求
 ----------------------------------------------------------
 
 2020/01/04 详细记录
+
+----------------------------------------------------------
+
+前端功能已完成
+开始数据分析
+
+测试在django中显示matplot的图片
+
+先创建job_analyse子应用，注册
+
+先把三剑客的包下载了
+pip install numpy pandas matplotlib jupyter -i https://pypi.douban.com/simple
+
+api函数
+def test(request):
+    n = np.random.randint(0, 10, size=10)
+    plt.plot(np.arange(0, 10), n)
+    plt.savefig('./static/img/analyse/123.png')
+    plt.close()
+    with open('./static/img/analyse/123.png', 'rb') as f:
+        image_data = f.read()
+    return HttpResponse(image_data, content_type="image/png")
+
+----------------------------------------------------------
+
+2020/01/06 详细记录
 
 ----------------------------------------------------------
 

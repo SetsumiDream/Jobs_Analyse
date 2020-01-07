@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python职位分析</title>
+</head>
+<script type="text/javascript" src="/static/js/jquery-1.12.3.js" ></script>
+<body>
+    <div id="box"></div>
+    <div>分析</div>
+</body>
+</html>
+
+<script>
+    $(function() {
+        $('#box').append("<img src=''/>");
+        $('#box img').attr("src", '/api/job/analyse/test/').click(function () {
+        var r = Math.random();
+        console.log(r);
+        $(this).attr('src', '/api/job/analyse/test/?' + r );
+        });
+    })
+</script>
