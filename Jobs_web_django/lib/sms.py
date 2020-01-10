@@ -3,7 +3,7 @@ import random
 import requests
 from django.core.cache import cache
 
-from worker import call_by_worker
+from worker import call_by_worker, celery_app
 from Jobs_web_django import config
 from common import keys
 
@@ -15,6 +15,7 @@ def gen_vcode(size=4):
 
 
 @call_by_worker
+# @celery_app.task
 def send_sms(phone):
     params = config.YZX_PARAMS.copy()
     params['mobile'] = phone
@@ -22,13 +23,13 @@ def send_sms(phone):
     cache.set(keys.VCODE_KEY % phone, vcode, timeout=180)
     params['param'] = vcode
     print(vcode)
-    resp = requests.post(config.YZX_URL, json=params)
-    if resp.status_code == 200:
-        result = resp.json()
-        if result['code'] == '000000':
-            return True, 'OK'
-        else:
-            print(result['code'])
-            return False, result['msg']
-    else:
-        return False, '访问短信服务器有误'
+    # resp = requests.post(config.YZX_URL, json=params)
+    # if resp.status_code == 200:
+    #     result = resp.json()
+    #     if result['code'] == '000000':
+    #         return True, 'OK'
+    #     else:
+    #         print(result['code'])
+    #         return False, result['msg']
+    # else:
+    #     return False, '访问短信服务器有误'

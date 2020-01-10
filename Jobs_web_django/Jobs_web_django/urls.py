@@ -18,6 +18,7 @@ from django.contrib import admin
 
 import user.api as user_api
 import job_analyse.api as job_analyse_api
+import job_view.views as job_view_views
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),

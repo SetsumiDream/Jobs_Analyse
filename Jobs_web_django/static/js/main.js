@@ -1,5 +1,8 @@
 //首页基本js
 $(function() {
+
+    $('body').css({'background': 'url(/static/img/background1.jpg)'});
+
     $('.box2').click(function(){
         window.location.href = location.search + '/jobs_analyse/'
 	});

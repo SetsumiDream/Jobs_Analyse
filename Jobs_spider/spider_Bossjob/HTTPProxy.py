@@ -8,6 +8,7 @@ INJECT_TEXT = 'Object.defineProperties(navigator,{webdriver:{get:() => false}});
 
 def response(flow):
     list1 = [TARGET_URL, TARGET_URL1, TARGET_URL2, TARGET_URL3]
+    # list1 = [TARGET_URL, TARGET_URL1, TARGET_URL2]
     for TARGET_URL_ in list1:
         if flow.request.url.startswith(TARGET_URL_):
             return

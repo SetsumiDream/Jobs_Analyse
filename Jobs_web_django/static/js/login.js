@@ -1,5 +1,8 @@
 //首页基本js
 $(function() {
+
+    $('body').css({'background': 'url(/static/img/background.jpeg)'});
+
     $('.box input[type="button"]').eq(1).click(function(){
 
         var phone = $('.inputBox input[type="text"]').val();
