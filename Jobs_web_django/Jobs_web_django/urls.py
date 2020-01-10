@@ -18,7 +18,7 @@ from django.contrib import admin
 
 import user.api as user_api
 import job_analyse.api as job_analyse_api
-import job_view.views as job_view_views
+import imageCDN.api as imageCDN_api
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
@@ -31,4 +31,9 @@ urlpatterns = [
 
     # api  analyse
     url(r'^api/job/analyse/test/$', job_analyse_api.test),  # 画图测试
+
+    # api  Image
+    url(r'^api/image/upload/img/$', imageCDN_api.upload_img),  # 上传测试
+    url(r'^api/image/load/img/$', imageCDN_api.load_img),  # 上传测试
+
 ]

@@ -1,7 +1,15 @@
 //首页基本js
 $(function() {
 
-    $('body').css({'background': 'url(/static/img/background1.jpg)'});
+    $.ajax({
+    url: location.search + "/api/image/load/img/?target=0",
+    type: 'get',
+    dataType: 'json',
+    success:function (data) {
+        console.log(data);
+        $('body').css({'background': 'url('+ data.data +')'});
+        }
+    });
 
     $('.box2').click(function(){
         window.location.href = location.search + '/jobs_analyse/'

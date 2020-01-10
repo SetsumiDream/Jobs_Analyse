@@ -6,8 +6,23 @@
 </head>
 <script type="text/javascript" src="/static/js/jquery-1.12.3.js" ></script>
 <body>
+    <h4>修改背景图片</h4>
+    <div class="content-img">
+        <ul class="content-img-list">
+            <!-- <li class="content-img-list-item"><img src="https://www.baidu.com/img/bd_logo1.png" alt=""><a class="delete-btn"><i class="ico-delete"></i></a></li> -->
+        </ul>
+        <div class="file">
+            <i class="ico-plus"></i>上传图片，支持jpg/png<input type="file" name="file" accept="image/*" id="upload" ><br>
+            目标：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="target" value="0" style="width: 30px"><br>
+            用途：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="class_target" value="1" style="width: 30px">
+            <br>
+            <input type="button" value="提交" id="submit">
+        </div>
+    </div>
+
+
+
     <div id="box"></div>
-    <div>分析</div>
 </body>
 </html>
 
@@ -19,5 +34,35 @@
         console.log(r);
         $(this).attr('src', '/api/job/analyse/test/?' + r );
         });
+
+
+        $('#submit').click(function () {
+            var formFile = new FormData();
+            {#console.log(document.getElementById("upload").files[0]);#}
+            formFile.append("img", $('#upload').get(0).files[0]);
+            formFile.append("target", $('#target').val());
+            formFile.append("class_target", $('#class_target').val());
+            $.ajax({
+                    url: 'http://127.0.0.1:8000/api/image/upload/img/',
+                    type: 'POST',
+                    data: formFile,
+                    async: true,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    // traditional:true,
+                    dataType:'json',
+                    success: function(res) {
+                        if (res.code==0) {
+                            alert('上传成功')
+                        }
+                        else{
+                            alert('上传失败')
+                        }
+
+                    }
+            })
+        })
+
     })
 </script>

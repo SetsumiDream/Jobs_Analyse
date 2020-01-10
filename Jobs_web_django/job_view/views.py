@@ -3,9 +3,9 @@ from django.shortcuts import render, redirect
 
 def rd_view(request):
     print(request.user)
-    if request.user:
-        return redirect('job_view:main')
-    return redirect('job_view:login')
+    if request.user.__str__() == 'AnonymousUser':
+        return redirect('job_view:login')
+    return redirect('job_view:main')
 
 
 def login(request):

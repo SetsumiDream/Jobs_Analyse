@@ -13,14 +13,13 @@ class AuthMiddleware(MiddlewareMixin):
                       '/api/user/submit/vcode/',
                       ]
 
-        if request.path in white_list:
-            request.user = None
-            return None
-
         uid = request.session.get('uid')
-        if not uid:
-            return render_json(code=errors.LOGIN_REQUIRED, data='请登录')
+        if uid:
         # 如果登录了， 就把user写入request
-        print(User.objects.get(id=uid))
-        user = User.objects.get(id=uid)
-        request.user = user
+            print(User.objects.get(id=uid))
+            user = User.objects.get(id=uid)
+            request.user = user
+            return None
+        if request.path in white_list or request.path.startswith('/api/image'):
+            return None
+        return render_json(code=errors.LOGIN_REQUIRED, data='请登录')

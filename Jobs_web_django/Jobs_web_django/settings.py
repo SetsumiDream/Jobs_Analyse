@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'job_view',
     'user',
     'job_analyse',
-    'imageCDN'
+    'imageCDN',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +142,8 @@ CACHES = {
 }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
+MEDIAS = 'medias'
 
 # REDIS = {
 #     'Master': {
