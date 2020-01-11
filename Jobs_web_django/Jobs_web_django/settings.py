@@ -128,7 +128,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
+STATIC_ROOT = os.path.join(os.path.join(BASE_DIR, 'Jobs_web_django'), 'static')
 
 CACHES = {
     "default": {

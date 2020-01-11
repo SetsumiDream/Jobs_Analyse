@@ -22,7 +22,7 @@ class User(models.Model):
         db_table = 'user'
 
     def __str__(self):
-        return f'<User {self.nickname}>'
+        return '<User %s>' % self.nickname
 
     @property
     def age(self):

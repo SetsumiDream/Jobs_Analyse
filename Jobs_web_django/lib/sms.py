@@ -23,13 +23,13 @@ def send_sms(phone):
     cache.set(keys.VCODE_KEY % phone, vcode, timeout=180)
     params['param'] = vcode
     print(vcode)
-    # resp = requests.post(config.YZX_URL, json=params)
-    # if resp.status_code == 200:
-    #     result = resp.json()
-    #     if result['code'] == '000000':
-    #         return True, 'OK'
-    #     else:
-    #         print(result['code'])
-    #         return False, result['msg']
-    # else:
-    #     return False, '访问短信服务器有误'
+    resp = requests.post(config.YZX_URL, json=params)
+    if resp.status_code == 200:
+        result = resp.json()
+        if result['code'] == '000000':
+            return True, 'OK'
+        else:
+            print(result['code'])
+            return False, result['msg']
+    else:
+        return False, '访问短信服务器有误'
