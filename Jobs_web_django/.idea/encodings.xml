@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/templates/travel/从近到远.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/templates/travel/价格从低到高.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/templates/travel/价格从高到低.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/templates/travel/智能排序.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/templates/travel/评论从高到低.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/templates/travel/详情页数据.html" charset="GBK" />
+  </component>
+</project>

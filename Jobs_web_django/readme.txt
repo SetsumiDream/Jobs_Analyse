@@ -13,6 +13,15 @@ ps -ef|grep uwsgi
 uwsgi --stop uwsgi.pid
 kill -9 n
 
+启动gunicorn
+pip install gunicorn
+pip install gevent
+gunicorn -c Jobs_web_django/gunicorn_config.py Jobs_web_django.wsgi
+ps aux|grep gunicorn
+
+kill `cat logs/gunicorn.pid`
+
+
 开启nginx
 nginx -c /var/www/Jobs_web_django/nginx.conf
 关闭
@@ -41,6 +50,12 @@ supervisorctl start all
 https://www.jianshu.com/p/9869cd1cbefe 配置
 https://blog.csdn.net/qq_18863573/article/details/52437689
 https://blog.csdn.net/sdafhkjas/article/details/102780983 解决错误
+
+linux 不能安装的包
+matplotlib==3.1.2
+mysqlclient==1.4.6
+pandas==0.25.3
+
 
 
 

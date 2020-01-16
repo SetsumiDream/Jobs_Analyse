@@ -25,6 +25,9 @@ urlpatterns = [
     # 视图
     url(r'^', include('job_view.urls', namespace='job_view')),
 
+    # travel
+    url(r'^', include('api_travel.urls', namespace='api_travel')),
+
     # api  User
     url(r'^api/user/submit/phone/$', user_api.submit_phone),  # 发送短信
     url(r'^api/user/submit/vcode/$', user_api.submit_vcode),  # 发送短信

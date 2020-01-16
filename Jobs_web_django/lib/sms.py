@@ -22,7 +22,7 @@ def gen_vcode(size=4):
 # @celery_app.task
 def send_sms(phone):
     key = keys.VCODE_KEY % phone
-    if cache.has_key(key):
+    if not cache.has_key(key):
         params = config.YZX_PARAMS.copy()
         params['mobile'] = phone
         vcode = gen_vcode()

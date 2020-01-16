@@ -1,4 +1,0 @@
-2020-01-30 12:59:19 ERROR [7032-Thread-11] middleware.process_exception line 39: LogicError: VcodEerror
-2020-01-30 12:59:20 ERROR [7032-Thread-12] middleware.process_exception line 39: LogicError: VcodEerror
-2020-01-30 12:59:21 ERROR [7032-Thread-13] middleware.process_exception line 39: LogicError: VcodEerror
-2020-01-30 12:59:24 ERROR [7032-Thread-14] middleware.process_exception line 39: LogicError: VcodEerror

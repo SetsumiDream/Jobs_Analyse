@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'user',
     'job_analyse',
     'imageCDN',
+    'api_travel',
 ]
 
 MIDDLEWARE = [
@@ -170,7 +171,7 @@ LOGGING = {
         'info': {
             # 'class': 'logging.handlers.TimedRotatingFileHandler',
             'class': 'logs.help.SafeLog',
-            'filename': f'{BASE_DIR}/logs/info.log',  # 日志保存路径
+            'filename': '%s/logs/info.log' % BASE_DIR,  # 日志保存路径
             'when': 'D',        # 每天切割日志
             'backupCount': 30,  # 日志保留 30 天
             'formatter': 'simple',
@@ -179,7 +180,7 @@ LOGGING = {
         'error': {
             # 'class': 'logging.handlers.TimedRotatingFileHandler',
             'class': 'logs.help.SafeLog',
-            'filename': f'{BASE_DIR}/logs/error.log',  # 日志保存路径
+            'filename': '%s/logs/error.log' % BASE_DIR,  # 日志保存路径
             'when': 'W0',      # 每周一切割日志
             'backupCount': 4,  # 日志保留 4 周
             'formatter': 'verbose',
@@ -204,12 +205,12 @@ LOGGING = {
     }
 }
 
-
-# REDIS = {
-#     'Master': {
-#         'host': '127.0.0.1',
-#         'db': '2',
-#         'port': 6379
-#     },
-#     'Slave': {}
-# }
+"""读写分离"""
+REDIS = {
+    'Master': {
+        'host': '127.0.0.1',
+        'db': '2',
+        'port': 6379
+    },
+    'Slave': {}
+}

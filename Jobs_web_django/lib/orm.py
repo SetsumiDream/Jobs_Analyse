@@ -40,8 +40,8 @@ def get_or_create(cls, defaults=None, **kwargs):
 
 
 def save_with_cache(model_save_func):
-    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        model_save_func(force_insert=False, force_update=False, using=None, update_fields=None)
+    def save(self, *args, **kwargs):
+        model_save_func(self, *args, **kwargs)
         key = keys.OBJECT_KEY % (self.__class__.__name__, self.pk)
         cache.set(key, self, 86400 * 14 * random.random() + 1)
     return save
