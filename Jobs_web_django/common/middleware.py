@@ -1,8 +1,14 @@
+import logging
+
 from django.utils.deprecation import MiddlewareMixin
 
 from common import errors
+from common.errors import LogicError
 from lib.http import render_json
 from user.models import User
+
+
+logger = logging.getLogger('err')
 
 
 class AuthMiddleware(MiddlewareMixin):
@@ -22,4 +28,13 @@ class AuthMiddleware(MiddlewareMixin):
             return None
         if request.path in white_list or request.path.startswith('/api/image'):
             return None
-        return render_json(code=errors.LOGIN_REQUIRED, data='请登录')
+        raise errors.LoginRequired
+
+
+class LogicErrorMiddleware(MiddlewareMixin):
+
+    def process_exception(self, request, exception):
+
+        if isinstance(exception, LogicError):
+            logger.error('LogicError: {0}'.format(exception))
+            return render_json(code=exception.code, data=exception.data)

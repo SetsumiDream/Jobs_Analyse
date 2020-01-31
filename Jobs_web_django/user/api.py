@@ -26,4 +26,4 @@ def submit_vcode(request):
         request.session['uid'] = user.id
         return render_json(data=user.to_dict())
     else:
-        return render_json(code=errors.VCODE_ERROR, data='验证码错误')
+        raise errors.VcodEerror

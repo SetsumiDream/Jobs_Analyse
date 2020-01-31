@@ -1,0 +1,30 @@
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{3}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{5}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{6}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{7}: reset: moving to HEAD
+[33m3460a5c[m[33m ([m[1;36mHEAD -> [m[1;32mjobs_web[m[33m, [m[1;31morigin/jobs_web[m[33m)[m HEAD@{8}: commit: 增加了Nginx和Uwsgi的配置
+[33me077285[m HEAD@{9}: pull: Merge made by the 'recursive' strategy.
+[33m593aad0[m HEAD@{10}: commit: 1.将静态背景换成七牛云CDN，添加修改背景功能
+[33mf4b4f4b[m HEAD@{11}: commit: 修改了cache默认redis
+[33m4095601[m HEAD@{12}: commit: 添加了celery
+[33me5a4026[m HEAD@{13}: commit: 完成登录页面
+[33md3f262b[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{14}: checkout: moving from develop to jobs_web
+[33md3f262b[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{15}: checkout: moving from jobs_web to develop
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{16}: checkout: moving from develop to jobs_web
+[33md3f262b[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m HEAD@{17}: pull: Fast-forward
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{18}: checkout: moving from jobs_web to develop
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{19}: checkout: moving from develop to jobs_web
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{20}: checkout: moving from jobs_web to develop
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{21}: checkout: moving from develop to jobs_web
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{22}: checkout: moving from jobs_web to develop
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{23}: checkout: moving from develop to jobs_web
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{24}: checkout: moving from jobs_spider to develop
+[33mea2dd91[m[33m ([m[1;31morigin/jobs_spider[m[33m, [m[1;32mjobs_spider[m[33m)[m HEAD@{25}: commit: 完成了51job、BOSS直聘、拉钩网爬虫
+[33ma3b9e30[m HEAD@{26}: commit: 1.学习scrapy框架
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{27}: checkout: moving from develop to jobs_spider
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{28}: checkout: moving from master to develop
+[33m73fc396[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{29}: commit (initial): 创建项目
