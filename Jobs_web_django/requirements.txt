@@ -95,7 +95,7 @@ redis==3.3.11
 requests==2.22.0
 ruamel.yaml==0.15.100
 ruamel.yaml.clib==0.2.0
-Scrapy==1.8.0
+Scrapy==1.8.2
 selenium==3.141.0
 Send2Trash==1.5.0
 service-identity==18.1.0
